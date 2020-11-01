@@ -43,7 +43,7 @@ function ShowPost({
     alert("Your comment posted successfully.");
     setShowCommentbox(false);
   };
-  console.log(comments);
+  // console.log(comments);
   var createTime = new Date(timestamp *1000);
   var showDate =
     createTime.getDate().toString() +

@@ -42,9 +42,7 @@ function App() {
   // }, []);
 
   useEffect(()=>{
-  console.log("---------------------------------");
-  console.log(posts);
-  console.log(Array.isArray(posts));
+  
   },[posts])
 
 

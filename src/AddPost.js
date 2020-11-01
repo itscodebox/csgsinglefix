@@ -20,7 +20,6 @@ export default function AddPost() {
   };
 
   const handleUpload = () => {
-    console.log(attachment);
     if(attachment){
     const UploadTask = storage
       .ref(`attachments/${attachment.name}`)
@@ -35,7 +34,6 @@ export default function AddPost() {
         setprogress(progress);
       },
       (error) => {
-        console.log(error.message);
       },
       () => {
         // var test = new Date(

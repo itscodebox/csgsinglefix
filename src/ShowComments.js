@@ -16,17 +16,17 @@ function ShowComments({ id, text, likes, dislikes, username, postId }) {
         if (doc.exists) {
           //   console.log("Document data:", doc.data().comments.);
           oldComents = doc.data().comments;
-          console.log(oldComents);
+        //   console.log(oldComents);
           const objIndex = oldComents.findIndex((obj) => obj.id == id);
-          console.log(objIndex);
+        //   console.log(objIndex);
           oldComents[objIndex].likes = oldComents[objIndex].likes + 1;
-          console.log(oldComents);
+        //   console.log(oldComents);
           db.collection("posts")
             .doc(postId)
             .update({ comments: [...oldComents] });
         } else {
           // doc.data() will be undefined in this case
-          console.log("No such document!");
+        //   console.log("No such document!");
         }
       })
       .catch(function (error) {
@@ -49,11 +49,11 @@ function ShowComments({ id, text, likes, dislikes, username, postId }) {
         if (doc.exists) {
           //   console.log("Document data:", doc.data().comments.);
           oldComents = doc.data().comments;
-          console.log(oldComents);
+        //   console.log(oldComents);
           const objIndex = oldComents.findIndex((obj) => obj.id == id);
-          console.log(objIndex);
+        //   console.log(objIndex);
           oldComents[objIndex].dislikes = oldComents[objIndex].dislikes + 1;
-          console.log(oldComents);
+        //   console.log(oldComents);
           db.collection("posts")
             .doc(postId)
             .update({ comments: [...oldComents] });

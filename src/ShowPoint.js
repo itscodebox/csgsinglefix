@@ -10,13 +10,13 @@ const ShowPoint = ({ username }) => {
       .then(function (querySnapshot) {
         querySnapshot.forEach(function (doc) {
           // doc.data() is never undefined for query doc snapshots
-          console.log(doc.id, " => ", doc.data());
+        //   console.log(doc.id, " => ", doc.data());
           var oldComents = doc.data().comments;
-          console.log(oldComents);
+        //   console.log(oldComents);
           //   To check the comment posted by current user
           const objIndex = oldComents.filter((obj) => obj.username == username);
-          console.log('Objjjjjjjjjjjjjjjjjjjjjjjjjjjj');
-          console.log(objIndex);
+        //   console.log('Objjjjjjjjjjjjjjjjjjjjjjjjjjjj');
+        //   console.log(objIndex);
           var totalPoints =0;
           objIndex.map((obj) => {
             totalPoints = totalPoints + obj.likes;

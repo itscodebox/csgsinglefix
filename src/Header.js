@@ -70,7 +70,7 @@ function Header() {
     index
       .search(searchText)
       .then(({ hits }) => {
-        console.log(hits);
+        // console.log(hits);
         // console.log(context.posts);
         context.setposts(hits);
         // setTrigger(null);
@@ -78,7 +78,7 @@ function Header() {
         // console.log(context.posts);
       })
       .catch((err) => {
-        console.log(err);
+        // console.log(err);
       });
   }, [searchText]);
 
@@ -95,8 +95,6 @@ function Header() {
     const unsubscribe = auth.onAuthStateChanged((authUser) => {
       if (authUser) {
         // user is lgged in
-        console.log('userrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr');
-        console.log(authUser);
         context.setUser(authUser.email);
       } else {
         // user is logged out
