@@ -1,6 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300&display=swap");
 
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+
 .post {
   width: 90%;
   border: 2px solid black;
@@ -41,8 +44,10 @@ em {
   color: #217EDB ;
 }
 .post_content {
-  font-family: "Roboto Slab", serif;
-  font-size: 17px;
+  /* font-family: "Roboto Slab", serif; */
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+    line-height: normal;
 }
 h6 {
   font-family: "Lato", sans-serif;

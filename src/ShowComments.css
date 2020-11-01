@@ -2,7 +2,7 @@
     display: flex;
     max-height: 150px;
     width: 90%;
-    margin: 10px auto;
+    margin: 30px auto;
     overflow-x: hidden;
     overflow-y: scroll;
 
@@ -20,4 +20,14 @@
 }
 #likes{
     margin-bottom: 15px;
+}
+#likes:hover{
+    margin-bottom: 15px;
+    color:#17AE0F  ;
+    font-size: 18px;
+}
+#dislikes:hover{
+    /* margin-bottom: 15px; */
+    color: red;
+    font-size: 18px;
 }

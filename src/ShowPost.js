@@ -44,7 +44,13 @@ function ShowPost({
     setShowCommentbox(false);
   };
   console.log(comments);
-
+  var createTime = new Date(timestamp *1000);
+  var showDate =
+    createTime.getDate().toString() +
+    "-" +
+    createTime.getMonth().toString() +
+    "-" +
+    createTime.getFullYear().toString();
   return (
     <div className="post">
       <div className="post_header">
@@ -55,7 +61,7 @@ function ShowPost({
         <div className="post_detail">
           <h6>
             <strong style={{ color: "#E94220" }}>Created at :</strong>
-            {timestamp}
+            {showDate}
           </h6>
           {/* <h6>
             <strong>Views :</strong> 108 times

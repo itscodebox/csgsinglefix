@@ -1,5 +1,32 @@
-*{
+* {
   margin: 0px;
   padding: 0px;
   box-sizing: border-box;
+}
+#bg_image {
+  background-image: url(./Images/CSG-2.jpg);
+  background-repeat: no-repeat;
+  background-color: #cccccc;
+  width: 100vw;
+  height: 87.3vh;
+  position: relative;
+  opacity: 1;
+  top: 0;
+  left: 0;
+  margin-right: 0px !important;
+  z-index: -1;
+  margin: 0px auto;
+}
+
+.Title_text {
+  color: currentColor;
+  z-index: 3;
+  display: flex;
+  display: block;
+  margin: 0px auto;
+  padding: 200px 0px 0px 0px ;
+  font-size: 60px;
+}
+.login_text{
+  color: aliceblue;
 }

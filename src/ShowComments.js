@@ -70,11 +70,11 @@ function ShowComments({ id, text, likes, dislikes, username, postId }) {
     <div className="commentBox">
       <div className="comment_reaction">
         <a onClick={increaseCount} id="likes">
-          {likes}
+          <strong>{likes}</strong>
           <ThumbUpAltIcon />
         </a>
         <a onClick={decreaseCount} id="dislikes">
-          {dislikes}
+          <storng>{dislikes}</storng>
           <ThumbDownIcon />
         </a>
       </div>

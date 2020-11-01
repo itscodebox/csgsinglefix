@@ -70,7 +70,16 @@ function App() {
             />
           ))
         ) : (
-          <h1>Login Please.......</h1>
+          <div id="bg_image">
+            <center>
+              <h1 className="Title_text">
+                <strong>Welcome To SingleFix</strong>
+              </h1>
+              <h1 className="login_text">
+                <strong>Please Login.</strong>
+              </h1>
+            </center>
+          </div>
         )}
       </PostsContext.Provider>
       {/* <AddPost /> */}
