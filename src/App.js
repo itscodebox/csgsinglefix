@@ -41,12 +41,7 @@ function App() {
   //     });
   // }, []);
 
-  useEffect(()=>{
-  
-  },[posts])
-
-
-
+  useEffect(() => {}, [posts]);
 
   return (
     <div className="App">
@@ -55,18 +50,21 @@ function App() {
       >
         <Header />
         {user ? (
-          posts.map((data) => (
-            <ShowPost
-              key={data.docid}
-              postId={data.docid}
-              username={data.username}
-              title={data._highlightResult.title.value}
-              body={data._highlightResult.body.value}
-              timestamp={data.timestamp._seconds}
-              attachment={data.attachment}
-              comments={data.comments}
-            />
-          ))
+          posts.map((data) => {
+
+            return (
+              <ShowPost
+                key={data.objectID}
+                postId={data.objectID}
+                username={data.username}
+                title={data._highlightResult.title.value}
+                body={data._highlightResult.body.value}
+                timestamp={data.timestamp._seconds}
+                attachment={data.attachment}
+                comments={data.comments}
+              />
+            );
+          })
         ) : (
           <div id="bg_image">
             <center>
