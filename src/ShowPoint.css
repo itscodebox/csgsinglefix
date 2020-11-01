@@ -1,0 +1,8 @@
+#points{
+    color: white;
+    display: flex;
+    flex-direction: row;
+}
+#points_value{
+    margin-right: 10px;
+}

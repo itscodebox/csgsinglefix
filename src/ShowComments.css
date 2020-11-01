@@ -1,0 +1,23 @@
+.commentBox{
+    display: flex;
+    max-height: 150px;
+    width: 90%;
+    margin: 10px auto;
+    overflow-x: hidden;
+    overflow-y: scroll;
+
+}
+.comment_reaction{
+    vertical-align: middle;
+    width: 30px;
+    text-align: center;
+    align-self: center;
+    align-content: center;
+    display: flex;
+    flex-direction: column;
+    height: 120px;  
+    margin: auto 20px;
+}
+#likes{
+    margin-bottom: 15px;
+}

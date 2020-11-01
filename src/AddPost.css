@@ -1,0 +1,11 @@
+.post_area{
+    width: 70%;
+    height: 80vh;
+    margin: 10px auto;
+}
+button{
+    margin: 10px auto;
+}
+#tag{
+    margin-bottom: 10px;
+}

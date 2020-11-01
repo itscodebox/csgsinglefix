@@ -1,0 +1,26 @@
+.navbar{
+    height: 80px;
+}
+#logo{
+    min-width: auto;
+    height: 70px;
+    margin: 1px;
+}
+li{
+    margin: 0px 10px;
+}
+button{
+    margin: 0px 10px;
+    width: 90px;
+}
+#search{
+    width: 45vw !important;
+    margin-right: 5.5vw !important;
+}
+#right_header{
+    display: flex;
+    flex-direction: row;
+}
+.score{
+    margin: auto 15px;
+}

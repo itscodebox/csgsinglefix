@@ -1,23 +1,91 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import AddPost from "./AddPost";
+// import React, { createContext, useState } from "react";
+import Header from "./Header";
+import ShowPost from "./ShowPost";
+import React, { useState, useEffect, useContext } from "react";
+import { db, auth } from "./firebase";
+// import PostsContextProvider from './PostsContext';
+import { PostsContext } from "./PostsContext";
+
+// export const PostsContext = createContext();
+
+// const PostsContextProvider = (props) => {
+//   const [posts, setPosts] = useState([]);
+//   return (
+//     <PostsContext.Provider value={{ posts, setPosts }}>
+//       {props.children}
+//     </PostsContext.Provider>
+//   );
+// };
 
 function App() {
+  const [posts, setposts] = useState([]);
+  const [user, setUser] = useState(null);
+  const [postComment, postCommentOpen] = useState(false);
+  // const context = useContext(PostsContext);
+  // useEffect(() => {
+  //   // this is where code runs
+  //   // every time posts change it will run .
+  //   // it will run once
+  //   db.collection("posts")
+  //     .orderBy("timestamp", "desc")
+  //     .onSnapshot((snapshot) => {
+  //       // evey time posts chnages snapshot will run the below code
+  //       setposts(
+  //         snapshot.docs.map((doc) => ({
+  //           id: doc.id,
+  //           post: doc.data(),
+  //         }))
+  //       );
+  //     });
+  // }, []);
+
+  useEffect(()=>{
+  console.log("---------------------------------");
+  console.log(posts);
+  console.log(Array.isArray(posts));
+  },[posts])
+
+
+
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <PostsContext.Provider
+        value={{ posts, setposts, user, setUser, postComment, postCommentOpen }}
+      >
+        <Header />
+        {user ? (
+          posts.map((data) => (
+            <ShowPost
+              key={data.docid}
+              postId={data.docid}
+              username={data.username}
+              title={data._highlightResult.title.value}
+              body={data._highlightResult.body.value}
+              timestamp={data.timestamp._seconds}
+              attachment={data.attachment}
+              comments={data.comments}
+            />
+          ))
+        ) : (
+          <h1>Login Please.......</h1>
+        )}
+      </PostsContext.Provider>
+      {/* <AddPost /> */}
+      {/* username, title, body, timestamp, attachment */}
+      {/* {posts.map(({ id, post }) => (
+        <ShowPost
+          key={id}
+          postId={id}
+          username={post.username}
+          title={post.title}
+          body={post.body}
+          timestamp={post.timestamp}
+          attachment={post.attachment}
+        />
+      ))} */}
     </div>
   );
 }

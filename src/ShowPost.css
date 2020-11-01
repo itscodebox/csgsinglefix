@@ -1,0 +1,76 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300&display=swap");
+
+.post {
+  width: 90%;
+  border: 2px solid black;
+  margin: 10px auto;
+}
+.post_detail {
+  display: flex;
+  flex-direction: row;
+}
+.post_header {
+  margin: 2px auto;
+  width: 95%;
+  height: auto;
+}
+.post_body {
+  margin: 2px auto;
+  width: 95%;
+  height: auto;
+}
+em {
+  background-color: yellow;
+}
+.post_input {
+  width: 80%;
+  margin: 10px 0px;
+}
+#comment_form {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.post_button {
+  margin: 20px 0px !important;
+}
+.titie_content {
+  font-family: 'Roboto Slab', serif;
+  font-size: 22px;
+  color: #217EDB ;
+}
+.post_content {
+  font-family: "Roboto Slab", serif;
+  font-size: 17px;
+}
+h6 {
+  font-family: "Lato", sans-serif;
+  font-family: "Roboto Condensed", sans-serif;
+  font-size: 14px;
+}
+#attach_img{
+    display: block;
+    height: 50vh;
+    width: auto;
+    margin: 5px auto;
+
+}
+#showAttachment{
+    float: right;
+    margin: 5px 12vw 20px auto;
+     text-decoration: underline;
+     color:#217EDB;
+}
+#showMore{
+    margin: 0px auto;
+    text-decoration: underline;
+    display: block;
+    text-align: center;
+    font-size: 18px;
+}
+#add_comment{
+    text-decoration: underline;
+    color: chocolate;
+    margin: 0px 0px;
+}
