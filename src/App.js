@@ -51,7 +51,8 @@ function App() {
         <Header />
         {user ? (
           posts.map((data) => {
-
+              {/* console.log(dat); */}
+              console.log(posts.length);
             return (
               <ShowPost
                 key={data.objectID}

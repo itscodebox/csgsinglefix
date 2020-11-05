@@ -4,6 +4,7 @@ import './ShowPoint.css'
 
 const ShowPoint = ({ username }) => {
   const [points, setPoints] = useState(null);
+  var totalPoints = 0;
   useEffect(() => {
     db.collection("posts")
       .get()
@@ -15,11 +16,14 @@ const ShowPoint = ({ username }) => {
         //   console.log(oldComents);
           //   To check the comment posted by current user
           const objIndex = oldComents.filter((obj) => obj.username == username);
-        //   console.log('Objjjjjjjjjjjjjjjjjjjjjjjjjjjj');
-        //   console.log(objIndex);
-          var totalPoints =0;
+          console.log('Objjjjjjjjjjjjjjjjjjjjjjjjjjjj');
+          console.log(objIndex);
+          console.log(totalPoints);
+        //   var totalPoints =0;
           objIndex.map((obj) => {
-            totalPoints = totalPoints + obj.likes;
+              if (obj.likes.length > 0){
+                totalPoints = totalPoints + obj.likes.length;
+              }
           });
           setPoints(totalPoints);
         });

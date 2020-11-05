@@ -28,8 +28,8 @@ function ShowPost({
     var _id = Date.now();
     const newComment = {
       username: context.user,
-      likes: 0,
-      dislikes: 0,
+      likes: [], // added here
+      dislikes: [], // added here
       text: comment,
       id: _id,
       postId: postId,
