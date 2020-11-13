@@ -22,6 +22,7 @@ import { PostsContext } from "./PostsContext";
 function App() {
   const [posts, setposts] = useState([]);
   const [user, setUser] = useState(null);
+  const [searchText, setSearchText] = useState("");
   const [postComment, postCommentOpen] = useState(false);
   // const context = useContext(PostsContext);
   // useEffect(() => {
@@ -46,13 +47,24 @@ function App() {
   return (
     <div className="App">
       <PostsContext.Provider
-        value={{ posts, setposts, user, setUser, postComment, postCommentOpen }}
+        value={{
+          posts,
+          setposts,
+          user,
+          setUser,
+          postComment,
+          postCommentOpen,
+          searchText,
+          setSearchText,
+        }}
       >
         <Header />
         {user ? (
           posts.map((data) => {
-              {/* console.log(dat); */}
-              console.log(posts.length);
+            {
+              /* console.log(dat); */
+            }
+            console.log(posts.length);
             return (
               <ShowPost
                 key={data.objectID}

@@ -44,12 +44,13 @@ const useStyles = makeStyles((theme) => ({
 // const APP_ID = functions.config().algolia.app;
 // const ADMIN_KEY = functions.config().algolia.key;
 
-const client = algoliasearch("NPSOZC5Y9O", "548cfffbbd45d123701b02a92f5a924c");
+const client = algoliasearch("954OBH0HDZ", "727471c52e68919f5dd7ff94ed85e26b");
+// const client = algoliasearch("NPSOZC5Y9O", "548cfffbbd45d123701b02a92f5a924c");
 // Nee to chnage here
 const index = client.initIndex("posts");
 
 function Header() {
-  const [searchText, setSearchText] = useState("");
+  // const [searchText, setSearchText] = useState("");
   const classes = useStyles();
   const [modalStyle] = useState(getModalStyle);
   const [open, setOpen] = useState(false);
@@ -67,8 +68,11 @@ function Header() {
   const context = useContext(PostsContext);
 
   useEffect(() => {
+        db.collection("cities").onSnapshot(function (doc) {
+          console.log("Current data-------------------------------------");
+        });
     index
-      .search(searchText)
+      .search(context.searchText)
       .then(({ hits }) => {
         // console.log(hits);
         // console.log(context.posts);
@@ -80,7 +84,7 @@ function Header() {
       .catch((err) => {
         // console.log(err);
       });
-  }, [searchText]);
+  }, [context.searchText]);
 
   // useEffect(() => {
   //   db.collection("posts").onSnapshot((snapshot)=>{
@@ -234,8 +238,8 @@ function Header() {
             placeholder="Search"
             aria-label="Search"
             id="search"
-            value={searchText}
-            onChange={(event) => setSearchText(event.target.value)}
+            value={context.searchText}
+            onChange={(event) => context.setSearchText(event.target.value)}
           />
 
           {/* to check if user is logged in or not  */}

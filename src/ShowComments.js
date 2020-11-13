@@ -4,12 +4,16 @@ import ThumbDownIcon from "@material-ui/icons/ThumbDown";
 import "./ShowComments.css";
 import { db, auth } from "./firebase";
 import { PostsContext } from "./PostsContext";
+import useForceUpdate from "use-force-update";
+
 
 function ShowComments({ id, text, likes, dislikes, username, postId }) {
   console.log("likessssssssss");
   console.log(likes);
   const [likeClass, setLikeclass] = useState("");
   const [dislikeClass, setDisLikeclass] = useState("");
+
+  const forceUpdate = useForceUpdate();
 
   const context = useContext(PostsContext);
   const increaseCount = () => {
@@ -34,6 +38,10 @@ function ShowComments({ id, text, likes, dislikes, username, postId }) {
           db.collection("posts")
             .doc(postId)
             .update({ comments: [...oldComents] });
+            setTimeout(()=>{
+              forceUpdate();
+            },5000);
+            
         } else {
           // doc.data() will be undefined in this case
           //   console.log("No such document!");
